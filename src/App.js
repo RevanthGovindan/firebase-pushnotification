@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import msg from "./firebase";
 
 function App() {
+  msg.requestPermission().then(() => {
+    console.log("have permission")
+    return msg.getToken();
+  }).then((token) => {
+    console.log(token)
+  }).
+    catch((err) => {
+      console.log("err")
+    });
+  msg.onMessage((payload) => {
+    console.log('Message received. ', payload);
+    // ...
+  });
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
