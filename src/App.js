@@ -8,8 +8,7 @@ function App() {
     return msg.getToken();
   }).then((token) => {
     console.log(token)
-  }).
-    catch((err) => {
+  }).catch((err) => {
       console.log("err")
     });
   msg.onMessage((payload) => {
