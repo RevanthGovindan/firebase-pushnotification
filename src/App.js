@@ -13,29 +13,15 @@ function App() {
     console.log(err)
   });
   msg.onMessage((payload) => {
-   
-    console.log('Message received. ', (payload));
-
+    console.log(payload)
     let data = payload.notification;
     new Notification(data.title, {
       body: data.body,
       icon: data.icon,
-      image: data.image,
-      actions: [
-        {
-          action: 'Start',
-          title: 'Start'
-        },
-        {
-          action: 'Stop',
-          title: 'Stop'
-        }
-      ],
-      autoClose: 10000
+      image: data.image
     })
   });
 
-  
 
   return (
     <div className="App">
