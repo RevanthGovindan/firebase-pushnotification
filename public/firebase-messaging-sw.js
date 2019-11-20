@@ -3,13 +3,13 @@ importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js');
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBI0uDFlQYtbHhueOhqcxkNRYAp0BowZtQ",
-    authDomain: "chat-adaad.firebaseapp.com",
-    databaseURL: "https://chat-adaad.firebaseio.com",
-    projectId: "chat-adaad",
-    storageBucket: "chat-adaad.appspot.com",
-    messagingSenderId: "190747831923",
-    appId: "1:190747831923:web:7c20350dea0400e5"
+    apiKey: "AIzaSyCyDWPhYQ2p3jL8hkfmPK2ifpF_dy5-dyA",
+    authDomain: "pushnotification-1b87a.firebaseapp.com",
+    databaseURL: "https://pushnotification-1b87a.firebaseio.com",
+    projectId: "pushnotification-1b87a",
+    storageBucket: "pushnotification-1b87a.appspot.com",
+    messagingSenderId: "955641023795",
+    appId: "1:955641023795:web:26dd3102a589be68b54246"
 };
 const fbInit = firebase.initializeApp(firebaseConfig);
 const messaging = fbInit.messaging();
@@ -20,7 +20,18 @@ messaging.setBackgroundMessageHandler(function (payload) {
     const notificationTitle = notification.title;
     const notificationOptions = {
         body: notification.body,
-        icon: "https://cdn.pixabay.com/photo/2017/04/03/15/52/love-you-2198772__340.png"
+        icon: "https://cdn.pixabay.com/photo/2017/04/03/15/52/love-you-2198772__340.png",
+        requireInteraction : true,
+        actions: [
+            {
+                action: 'Start',
+                title: 'Start'
+            },
+            {
+                action: 'Stop',
+                title: 'Stop'
+            }
+        ]
     };
 
     return self.registration.showNotification(notificationTitle,

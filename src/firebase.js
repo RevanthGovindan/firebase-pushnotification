@@ -2,19 +2,18 @@ import * as firebase from "firebase/app";
 import "firebase/messaging";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBI0uDFlQYtbHhueOhqcxkNRYAp0BowZtQ",
-    authDomain: "chat-adaad.firebaseapp.com",
-    databaseURL: "https://chat-adaad.firebaseio.com",
-    projectId: "chat-adaad",
-    storageBucket: "chat-adaad.appspot.com",
-    messagingSenderId: "190747831923",
-    appId: "1:190747831923:web:7c20350dea0400e5"
+    apiKey: "AIzaSyCyDWPhYQ2p3jL8hkfmPK2ifpF_dy5-dyA",
+    authDomain: "pushnotification-1b87a.firebaseapp.com",
+    databaseURL: "https://pushnotification-1b87a.firebaseio.com",
+    projectId: "pushnotification-1b87a",
+    storageBucket: "pushnotification-1b87a.appspot.com",
+    messagingSenderId: "955641023795",
+    appId: "1:955641023795:web:26dd3102a589be68b54246"
 };
 const fbInit = firebase.initializeApp(firebaseConfig);
 const msg = fbInit.messaging();
 
-msg.usePublicVapidKey("BNz1zNhGxIDIY2t9i_Y8xQS8qtEdhYxliEIQop-iA7l4Wzk0WTh4Y9OI9-kHxp4I6B78gn39xpdvgB4QU9sI78U");
-
+msg.usePublicVapidKey("BPkA9rKfkjgR6KB5KTMYtobIH4HBuHMwUAVzhqNLW4jr9YovEBF6I5nJiH9joNvrLAG0pbqDqhvDX1x0CjQkNI4");
 
 export default msg;
 
